@@ -1,0 +1,45 @@
+.table-a {
+
+    background-color: #77C6E5;
+    border: #77C6E5 solid 1px;
+    width: 100%;
+    margin-top: 4px;
+    height: 104px;
+    border-collapse:unset;
+    text-align: center;
+    table-layout: fixed;
+  }
+  #GF{
+    max-width: 1276px;
+    height: 104px;
+    margin-bottom: 9px;
+  }
+  td {
+    padding-left: 15px;
+  }
+  
+  .dados-consulta{
+
+    background-color: #77C6E5;
+    color:#102B52;
+    font-size: 16px;
+    font-family: 'Montserrat' , SemiBold;
+    font-weight: bold;
+    text-align: left;
+  }
+  .dados-resposta{
+    font-family: 'Arial', Regular ;
+    color: #102B52;
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  .dados-resposta td tr {
+    background-color: #77C6E5;
+    table-layout: fixed;
+  }
+  .ico-dev {
+    color:#102B52;
+    padding-left: 5%;
+  
+  }

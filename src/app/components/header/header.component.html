@@ -1,0 +1,62 @@
+    <header class="container" id="htmlData">
+
+    <div class="brand">
+     <div class="logo">
+      <img src="../../assets/SU_NovoLogo_Pinheiro_2022 (1).png" alt="Logo Unimed">
+  </div>
+          <h1 class="gf"><span class="gf-b">Gerenciador de Fontes | </span>Relatório Unificado</h1>
+  </div>
+
+<!--MENU-->
+
+        <nav>
+          <ul class="links">
+            <li class="gf"> Data e hora atualização: <span class="gf-b">{{dataHoraAtu }}</span></li>
+            <li><button  type="text" class="butons" data-tooltip="Mais" data-flow="top"><fa-icon [icon]="faEllipsisVertical" ></fa-icon></button></li>
+            <li><button type="text" class="butons" (click)="openPDF()"  data-tooltip="Exportar PDF" data-flow="top"><fa-icon [icon]="faFileLines"></fa-icon></button></li>
+            <li><button  [cdkCopyToClipboard]= "copyUrl" (click)="botaoClicado()" type="text" class="butons"  data-flow="top"><fa-icon [icon]="faLink" ></fa-icon></button></li>
+            <li><button type="text" class="button-close"><fa-icon [icon]="faXmark" data-tooltip="Fechar" data-flow="top" ></fa-icon></button></li>
+          </ul>
+        </nav>
+         <span  *ngIf="mostrarMsg" class="Msgcopied">Copiado com Sucesso! </span>
+    </header>
+
+
+
+
+
+        <!--<a><fa-icon class="icons" [icon]="" size="1x"  icon-apresentation [border]="true" [styles]="{ background:'#009EDB',color:'white',width: '39px'  }"></fa-icon></a>
+        <a><fa-icon  class="icons" [icon]="" size="1x"  icon-apresentation [border]="true" [styles]="{ background:'#009EDB',color:'white',width: '39px' }"></fa-icon></a>
+        <a> <fa-icon   [icon]=" " size="2x" [styles]="{ background:'white',color:'#102B52', with: '40px'  }"></fa-icon></a>
+        -->
+
+
+
+        <!--     <div class="container">
+            <div class="row">
+              <div class="col-md-8" id="htmlData">
+                <table class="table table-bordered">
+                  <tr class="table-primary">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                  </tr>
+                  <tr *ngFor="let user of USERS">
+                    <th>{{user.cpf}}</th>
+                    <td>{{user.cpfConstaAnaliseEspecial}}</td>
+                    <td>{{user.cpfConstaListaPep}}</td>
+                    <td>{{user.situacaoCpf}}</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-md-4 text-right">
+                <button class="btn btn-success btn-block" (click)="openPDF()">Download PDF</button>
+              </div>
+            </div>
+          </div>    -->
+
+
+
+
+

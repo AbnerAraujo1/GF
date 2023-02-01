@@ -1,0 +1,121 @@
+/*-- FONTES --*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/*-- Sessão azul --*/
+.table-a {
+
+background-color: #77C6E5;
+border: #77C6E5 solid 1px;
+width: 100%;
+margin-top: 4px;
+height: 104px;
+border-collapse:unset;
+text-align: center;
+table-layout: fixed;
+}
+
+#GF{
+max-width: 1276px;
+height: 104px;
+}
+
+td {
+padding-left: 15px;
+}
+
+.dados-consulta{
+
+background-color: #77C6E5;
+color:#102B52;
+font-size: 16px;
+font-family: 'Montserrat' , SemiBold;
+font-weight: bold;
+text-align: left;
+}
+.dados-resposta{
+font-family: 'Arial', Regular ;
+color: #102B52;
+font-size: 16px;
+text-align: left;
+}
+
+.dados-resposta td tr {
+background-color: #77C6E5;
+table-layout: fixed;
+}
+
+.ico-dev {
+color:#102B52;
+padding-left: 5%;
+
+}
+
+/* tabela maior */
+
+#table-devolutiva {
+max-width: 1276px;
+margin-top: 9px;
+background-color: #FFFFFF;
+height: 800px;
+
+}
+
+.table-d {
+width: 100%;
+table-layout: fixed;
+border-spacing: 4px;
+border-collapse: collapse;
+
+
+}
+
+th {
+height: 32px;
+font-family: 'Montserrat', SemiBold;
+font-weight: bold;
+padding-left: 25px;
+text-align: left;
+padding-top: 7px;
+padding-bottom: 7px;
+color: #102B52;
+background-color: #E5DA77;
+
+}
+
+.ico-tabela {
+font-size: 21px;
+display: flex;
+justify-content: end;
+padding-right: 23px;
+}
+
+.tb {
+border-right: #E3E3E3 1px solid;
+padding-left: 25px;
+font-size: 16px;
+font-family: 'Arial', Regular;
+}
+
+h3 {
+font-size: 14px;
+color:#102B52;
+font-family: 'Montserrat', SemiBold;
+padding-bottom: 8px;
+padding-top: 24px;
+
+}
+
+input {
+margin-right: 8px;
+padding-right: 30.85px;
+
+
+}
+
+#table-w {
+height: 385px;
+max-width: 1276px;
+margin-top: 19px;
+background-color: #FFFFFF;
+
+}

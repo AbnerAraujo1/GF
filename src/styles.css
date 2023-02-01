@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    background-color: #F0F0F0;
+    margin-left: 45px;
+    margin-right: 45px;
+
+}
+a{
+    text-decoration: none;
+    color:#444;
+    transition: .4s;
+}
+ul{
+    list-style:none;
+}
+
+
+/*RESPONSIVIDADE*/
+
+@media (max-width:700px) {
+
+  body {
+    max-width: 700px;
+  }
+}
+

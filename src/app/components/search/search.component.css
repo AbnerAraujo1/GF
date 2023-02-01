@@ -1,0 +1,32 @@
+.grid-container { 
+    display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     margin-left: 45px;
+     margin-right: 45px;
+     width: 1276px; 
+     height: 74px; 
+}
+
+.grid-item{
+   
+    background-color: #E5F8FF;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 5px;
+    
+}
+.butons {
+    border:none;
+    border-bottom: 1px solid #102B52;
+    font-size: 16px; 
+    height: 45px;
+    background-color: #E5F8FF;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 22.8px;
+   
+
+}
+

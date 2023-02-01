@@ -1,0 +1,200 @@
+
+<app-header></app-header>
+<app-rotas></app-rotas>
+<!--Sessão azul-->
+<section class="grid-container" id="GF-CNPJ">
+
+<table class="table-a">
+  <tr class="dados-consulta">
+    <td>Data Avaliação</td>
+    <td>N° Proposta</td>
+    <td>Produto</td>
+    <td>CNPJ</td>
+    <td>Nome</td>
+    <td>Vinculo CNPJ</td>
+  </tr>
+
+<tr class="dados-resposta">
+  <td>{{dataAval}}</td>
+  <td>{{nProposta}} </td>
+  <td>{{produto}}</td>
+  <td>{{cnpj}}</td>
+  <td>{{nome}}</td>
+  <td class="ico-td">{{vinculoCnpj}} <fa-icon class="ico-dev"  [icon]="faLink"></fa-icon></td>
+</tr>
+</table>
+</section>
+
+<!--Sessão verde-->
+<section id="filtro-green" >
+  <div class="ls-custom-select">
+    <select class="item">
+        <option value="1"> Área implantação </option>
+        <option value="2"> Vida</option>
+        <option value="3"> Saúde </option>
+        <option value="4"> Previdência </option>
+    </select>
+</div>
+
+<div class="ls-custom-select">
+  <select class="item">
+      <option value="1"> Todos em análise</option>
+      <option value="2"> Aprovado</option>
+      <option value="3"> Em análise</option>
+      <option value="4"> Reprovado </option>
+  </select>
+</div>
+</section>
+
+<section id="table-devolutiva">
+
+  <!--TABELA MAIOR -->
+<section  class="max-tabel">
+<table class="table-d">
+
+<tr class="tr-d">
+<th>Avaliação</th>
+<th>Resultado da avaliação</th>
+<th>Sugestão de encaminhamento</th>
+</tr>
+
+<tr>
+<td class="td-d">1 Análises especiais</td>
+<td class="td-d"><fa-icon  class="ico-td-circle" class="ico-red" [icon]="farCircleDot"></fa-icon>&nbsp;Consta na lista com alerta de mídia negativa</td>
+<td class="td-d">Encaminhar para Compliance indicando restrições <fa-icon class="ico-info"  [icon]="faCircleInfo"></fa-icon></td>
+</tr>
+<tr>
+<td class="td-d">2 Pessoas Politicamente Exposta (PEP)</td>
+<td class="td-d"><fa-icon class="ico-td-circle" class="ico-yellow" [icon]="farCircleDot"></fa-icon>&nbsp;CPF consta na lista PEP</td>
+<td class="td-d">Encaminhar para Compliance indicando PEP <fa-icon class="ico-info"  [icon]="faCircleInfo"></fa-icon></td>
+</tr>
+<tr>
+<td class="td-d">3 Autenticidade de CPF</td>
+<td class="td-d"><fa-icon class="ico-td-circle" class="ico-yellow" [icon]="farCircleDot"></fa-icon>&nbsp;CPF pendente de regularização</td>
+<td class="td-d">Avaliar XX ou encaminhar para área XX <fa-icon class="ico-info"  [icon]="faCircleInfo"></fa-icon></td>
+</tr>
+<tr>
+<td class="td-d">4 Similaridade do nome</td>
+<td class="td-d"><fa-icon class="ico-td-circle"  class="ico-green" [icon]="farCircleDot"></fa-icon>&nbsp;Nome com similaridade entre 0 a 75%</td>
+<td class="td-d">Seguir com fluxo de aprovação <fa-icon class="ico-info"  [icon]="faCircleInfo"></fa-icon></td>
+</tr>
+<tr>
+<td class="td-d">5 Data de nascimento</td>
+<td class="td-d"><fa-icon class="ico-td-circle"  class="ico-yellow" [icon]="farCircleDot"></fa-icon>&nbsp;Data de nascimento divergente</td>
+<td class="td-d">Avaliar XX ou encaminhar para área XX <fa-icon class="ico-info"  [icon]="faCircleInfo"></fa-icon></td>
+</tr>
+</table>
+</section>
+
+<!--TABELA EX 1-->
+<section class="tb-a">
+  <h3 >EXEMPLO 1</h3>
+<table class="table-d" [cellSpacing]="16">
+
+  <tr class="tr-d">
+  <th>Massa de vida</th>
+  <th>Aprovados</th>
+  <th>Em análise</th>
+  <th>Reprovados</th>
+  <th>Não avaliados</th>
+  </tr>
+
+  <tr>
+  <td class="td-d">1 Quantidade de vidas</td>
+  <td class="td-d"><span>30</span> aprovados (30%) </td>
+  <td class="td-d"><span>10 </span> em análise (12%)</td>
+  <td class="td-d"><span>35</span> reprovadas (23%)</td>
+  <td class="td-d"><span>05</span> não avaliadas (2%)</td>
+  </tr>
+  <tr>
+    <td class="td-d">2 Análises especiais</td>
+  <td class="td-d"><span>80</span> aprovados (30%) </td>
+  <td class="td-d"><span>10 </span> em análise (12%)</td>
+  <td class="td-d"><span>05</span> reprovadas (23%)</td>
+  <td class="td-d"><span>05</span> não avaliadas (2%)</td>
+  </tr>
+  <tr>
+    <td class="td-d">3 Pessoa Politicamente Exposta</td>
+    <td class="td-d"><span>90</span> aprovados (30%) </td>
+    <td class="td-d"><span>01 </span> em análise (12%)</td>
+    <td class="td-d"><span>04</span> reprovadas (23%)</td>
+    <td class="td-d"><span>05</span> não avaliadas (2%)</td>
+  </tr>
+</table>
+</section>
+
+<!--TABELA EX 2-->
+<section class="tb-b">
+  <h3>EXEMPLO 2</h3>
+<table class="table-d">
+  <tr class="tr-d">
+    <th>Massa de vida </th>
+    <th>Resultado da avaliação</th>
+    <th>Sugestão de encaminhamento</th>
+  </tr>
+
+  <tr>
+    <td class="td-d">1 Quantidade de vidas avaliadas </td>
+    <td class="td-d"><fa-icon  class="ico-td-circle" class="ico-red" [icon]="farCircleDot"></fa-icon>&nbsp;Acima de 50% de vidas reprovadas</td>
+    <td class="td-d">Encaminhar para Compliance indicando restrições<fa-icon class="ico-info"  [icon]="faCircleInfo"></fa-icon></td>
+  </tr>
+  <tr>
+    <td class="td-d">2 Pessoas Politicamente Exposta (PEP)</td>
+    <td class="td-d"><fa-icon class="ico-td-circle" class="ico-yellow" [icon]="farCircleDot"></fa-icon>&nbsp;Entre 20% e 50%de vidas na lista PEP</td>
+    <td class="td-d">Encaminhar para Compliance indicando PEP<fa-icon class="ico-info"  [icon]="faCircleInfo"></fa-icon></td>
+  </tr>
+  <tr>
+    <td class="td-d">3 Autenticidade de CPF</td>
+    <td class="td-d"><fa-icon class="ico-td-circle" class="ico-green" [icon]="farCircleDot"></fa-icon>&nbsp;Mais de 80% de vidas com CPF regular</td>
+    <td class="td-d">Avaliar XX ou encaminhar para área XX<fa-icon class="ico-info"  [icon]="faCircleInfo"></fa-icon></td>
+    </tr>
+    <tr>
+      <td class="td-d">4 Quantidade de vidas avaliadas</td>
+      <td class="td-d"></td>
+      <td class="td-d"></td>
+      </tr>
+</table>
+</section>
+
+<!--TABELA EX 3-->
+<section class="tb-c">
+  <h3>EXEMPLO 3</h3>
+<table class="table-d" [cellSpacing]="16">
+  <tr class="tr-d">
+    <th style="width:25%">Massa de vida </th>
+    <th style="width:25%">Resultado da avaliação</th>
+    <th style="width:12%">Aprovados</th>
+    <th style="width:12%">Em análise</th>
+    <th style="width:12%">Reprovados</th>
+    <th style="width:12%">Não avaliados</th>
+    </tr>
+
+    <tr>
+    <td class="td-d">1 Quantidade de vidas avaliadas </td>
+    <td class="td-d"><fa-icon  class="ico-td-circle" class="ico-red" [icon]="farCircleDot"></fa-icon>&nbsp;Acima de 50% de vidas reprovadas</td>
+    <td class="td-d"><span>30</span> (30%)</td>
+    <td class="td-d"><span>10</span> (12%) </td>
+    <td class="td-d"><span>60</span> (23%)</td>
+    <td class="td-d"><span>05</span> (2%)</td>
+    </tr>
+    <tr>
+    <td class="td-d">2 Pessoas Politicamente Exposta (PEP)</td>
+    <td class="td-d"><fa-icon class="ico-td-circle" class="ico-yellow" [icon]="farCircleDot"></fa-icon>&nbsp;Entre 20% e 50%de vidas na lista PEP</td>
+    <td class="td-d"><span>28</span> (27%)</td>
+    <td class="td-d"><span>22</span> (11%) </td>
+    <td class="td-d"><span>32</span> (23%)</td>
+    <td class="td-d"><span>02</span> (1%)</td>
+    </tr>
+    <tr>
+    <td class="td-d">3 Autenticidade de CPF</td>
+    <td class="td-d"><fa-icon class="ico-td-circle" class="ico-green" [icon]="farCircleDot"></fa-icon>&nbsp;Mais de 80% de vidas com CPF regular</td>
+    <td class="td-d"><span>44</span> (41%)</td>
+    <td class="td-d"><span>33</span> (22%) </td>
+    <td class="td-d"><span>12</span> (15%)</td>
+    <td class="td-d"><span>07</span> (4%)</td>
+    </tr>
+</table>
+</section>
+
+</section>
+
