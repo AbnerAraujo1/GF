@@ -16,6 +16,7 @@ import { DevolutivaCnpjComponent } from './components/pages/devolutiva-cnpj/devo
 import { RotasComponent } from './components/rotas/rotas.component';
 import { ProponenteComponent } from './components/proponente/proponente.component';
 import { DadosDeRelatorioComponent } from './components/pages/dados-de-relatorio/dados-de-relatorio.component';
+import { FormsModule } from "@angular/forms";
 
 
 
@@ -30,7 +31,8 @@ import { DadosDeRelatorioComponent } from './components/pages/dados-de-relatorio
     DevolutivaCnpjComponent,
     RotasComponent,
     ProponenteComponent,
-    DadosDeRelatorioComponent
+    DadosDeRelatorioComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -38,8 +40,8 @@ import { DadosDeRelatorioComponent } from './components/pages/dados-de-relatorio
     IconsModule,
     FontAwesomeModule,
     ClipboardModule,
-    HttpClientModule
-
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

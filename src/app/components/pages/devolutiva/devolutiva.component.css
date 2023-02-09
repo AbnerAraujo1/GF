@@ -101,13 +101,16 @@ button {
 
 }
 
+
 select {
   border:none;
   background-color: #E5F8FF;
-  font-size: 16px;
+  font-size: 13px;
   font-family: 'Montserrat', Regular;
   text-indent: 22.28px;
   color:#102B52;
+  
+  
 }
 
 select:focus {
@@ -119,7 +122,31 @@ option {
   color:#102B52;
   background-color: #E5F8FF;
 }
-
+input {
+  color: #fff;
+  font-size: 13px;
+  width: 10%;
+  padding: 5px 5px 5px;
+  background-color: #095d77;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  
+}
+label{margin-right: 15px;
+margin-left: 10px;}
+button{
+  color: #fff;
+  font-size: 13px;
+  width: 40%;
+  padding: 5px 3px 5px;
+  background-color: #095d77;
+  border: none;
+  border-radius: 4px;
+  margin-left:35px ;
+  margin-top: 5px;
+  
+}
 /*tabela devolutiva*/
 
 #table-devolutiva {

@@ -11,7 +11,10 @@ import { registerLocaleData } from '@angular/common';
 export class DadosPropService {
 
   data: any[] = [];
-
+  nomeAtributo:any= '';
+  nomeAtributo2:any= '';
+  valoresSelect:any= [];
+  valorAtributo:any='';
   constructor(private http: HttpClient) { }
   postData(data: any) {
     const url = "https://api-services-hml2.digital-segurosunimed.com/motor-analise-cliente/rest/aplica-regra";
@@ -19,7 +22,8 @@ export class DadosPropService {
     return this.http.post(url, data, { headers });
   }
   
-  onSubmit() {
+  onSubmit(filtroDigitado?: any, selectedFiltro?: any, filtroDigitado2?:any) {
+
     const data = {
       "regras": [
         {
@@ -68,7 +72,7 @@ export class DadosPropService {
               "nomeAtributo": "rendaDeclaradaProposta",
               "valorAtributo": 5000
             },
-            {
+            { 
               "nomeAtributo": "valorContribuicaoMensalProposta",
               "valorAtributo": 1600.00
             }
@@ -103,6 +107,58 @@ export class DadosPropService {
         }
       ]
     };
+    switch(+selectedFiltro) {
+      case 3:
+        this.nomeAtributo = "situacaoCpf";
+        break;
+      case 1:
+        this.nomeAtributo ="cpfConstaAnaliseEspecial";
+        break;
+      case 2:
+        this.nomeAtributo = "cpfConstaListaPep";
+        break;
+      case 55:
+          this.nomeAtributo = "qtdeVidasProposta";
+          break;
+      case 5:
+          this.nomeAtributo = "dataNascimentoProposta";
+          break;
+      case 8:
+          this.nomeAtributo = "profissaoProposta";
+          break;
+      case 10:
+          this.nomeAtributo = "rendaDeclaradaProposta";
+          break;
+    }
+    
+    
+   switch(this.nomeAtributo){
+    case "qtdeVidasProposta":
+          this.nomeAtributo2 = "qtdeFuncionarios";
+          break;
+          case "dataNascimentoProposta":
+          this.nomeAtributo2 = "dataNascimentoBaseConsulta";
+          break;
+    
+      case "profissaoProposta":
+          this.nomeAtributo2 = "profissaoBaseConsulta";
+          break;
+       case"rendaDeclaradaProposta":
+            this.nomeAtributo2 = "valorContribuicaoMensalProposta";
+            break;
+   }
 
+    //substituir esse "situaçaocpf" por uma variavel que contenha o atributo selecionado no select
+    if (filtroDigitado && filtroDigitado2){
+      data.regras = [{"codigoRegra": +selectedFiltro, "atributos": [
+        {"nomeAtributo": this.nomeAtributo, "valorAtributo": filtroDigitado},
+        {"nomeAtributo":this.nomeAtributo2, "valorAtributo": filtroDigitado2}
+      ]}];
+    } 
+    
+      
+    
+    console.log(filtroDigitado,filtroDigitado2)
+     
     return this.postData(data);
   } }

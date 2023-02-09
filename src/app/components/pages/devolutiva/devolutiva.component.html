@@ -30,23 +30,35 @@
 <!--Sessão verde-->
 <section id="filtro-green" >
 
-  <div class="ls-custom-select">
-    <select class="item">
-        <option value="1"> Área implantação </option>
-        <option value="2"> Vida</option>
-        <option value="3"> Saúde </option>
-        <option value="4"> Previdência </option>
+  <!-- Pesquiar como passar o nomeAmigael e o codigo retornor ao mesmo tempo no atributo value 
+       para poder usar os atributos na nova função de filtro -->
+
+  <!-- Em seguida ajustar o filtro anterior que estava usando o regra.codigoRetorno -->
+<div class="ls-custom-select">
+   <select class="item" (change)="filter($event);" [(ngModel)]="selectedFiltro">
+      <option [value]="'Todos'">Todos</option>
+      <option [value]="regra.codigoRetorno" *ngFor="let regra of dataSelect" >
+      {{regra.codigoRetorno}}
+      </option>
     </select>
+   
+
+</div>
+<div class="ls-custom-select">
+  <label for="name">
+    <span>Atributo 1:</span>
+  </label>
+  <input type="text" [(ngModel)]="filtroDigitado" >
+  <label for="name"   *ngIf="+selectedFiltro == 5 || +selectedFiltro == 55
+  || +selectedFiltro == 8 || +selectedFiltro == 10">
+    <span>Atributo 2:</span>
+  </label>
+  <input type="text" [(ngModel)]="filtroDigitado2" *ngIf="+selectedFiltro == 5 || +selectedFiltro == 55
+  || +selectedFiltro == 8 || +selectedFiltro == 10" >
+ <button type="button" (click)="filtrar()">Filtrar</button>
 </div>
 
-<div class="ls-custom-select">
-  <select class="item">
-      <option value="1"> Todos em análise</option>
-      <option value="2"> Aprovado</option>
-      <option value="3"> Em análise</option>
-      <option value="4"> Reprovado </option>
-  </select>
-</div>
+
 
 </section>
 
@@ -60,8 +72,9 @@
   <th>Sugestão de encaminhamento</th>
 </tr>
 
-<tr *ngFor="let regra of this.data.regras">
-  <td class="td-d">{{regra.codigoRetorno}} {{regra.nomeAmigavel}}</td>
+<tr *ngFor="let regra of this.data.regras let i = index ">
+  
+  <td class="td-d">{{i+1}} {{regra.nomeAmigavel}}</td>
   <td class="td-d">
     <fa-icon  class="ico-td-circle ico-red" 
     *ngIf="regra.semaforo === 'VERMELHO'"
